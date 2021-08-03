@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.doan</groupId>
-	<artifactId>dataModel</artifactId>
+	<artifactId>data-model</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dataModel</name>
 	<description>Spring endpoint to return model entities for dto modeling</description>
@@ -95,6 +95,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!--MVN configuration to build docker images-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
