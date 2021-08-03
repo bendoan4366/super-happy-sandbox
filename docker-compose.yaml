@@ -1,0 +1,45 @@
+version: '3.7'
+
+services: 
+    janusgraph:
+        image: janusgraph/janusgraph
+        mem_limit: 700m
+        ports: 
+            - 8182:8182
+        networks: 
+            - sandbox-network
+    
+    nifi:
+        image: apache/nifi
+        mem_limit: 700m
+        ports: 
+            - 8443:8443
+        networks:
+            - sandbox-network
+
+    data-model:
+        image: bendoan4366/superhappy-data-model:0.0.1-SNAPSHOT
+        mem_limit: 700m
+        ports: 
+            - 8202:8202
+        networks:
+            - sandbox-network
+
+    data-model:
+        image: bendoan4366/superhappy-data-normalizer:0.0.1-SNAPSHOT
+        mem_limit: 700m
+        ports: 
+            - 8201:8201
+        networks:
+            - sandbox-network
+
+    apache-cassandra:
+        image: cassandra:3.11
+        mem_limit: 700m
+        ports: 
+            - 7000:7000
+        networks:
+            - sandbox-network
+    
+networks:
+    sandbox-network:
