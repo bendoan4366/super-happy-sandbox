@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  janusgraph:
+    image: janusgraph/janusgraph
+    mem_limit: 700m
+    ports:
+      - 8182:8182
+    networks:
+      - sandbox-network
+
+networks:
+  sandbox-network:
